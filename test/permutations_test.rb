@@ -1,6 +1,6 @@
 require_relative "test_helper"
 
-xdescribe "permutations?" do
+describe "permutations?" do
   it "returns true for empty string" do
     expect(permutations?("", "")).must_equal true
   end
