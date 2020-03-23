@@ -4,10 +4,8 @@
 # palindrome_permutation?("hello") => false
 # palindrome_permutation?("carrace") => true # because racecar is a palindrome
 
-# return true for empty string
-# create hash with letters as keys, set value to one or increment for each occurrence
-# if there is a value with an odd number of occurences, return false unless there's only one odd value
-# return true
+# O(n) time complexity, where n is the chars in the string
+# O(n) space complexity
 
 def palindrome_permutation?(string)
   return true if string == ""
@@ -23,16 +21,5 @@ def palindrome_permutation?(string)
     end
   end
 
-  odd_vals = []
-  hash.each do |key, value|
-    if value.odd?
-      odd_vals << [value]
-    end
-  end
-
-  if odd_vals.length > 1
-    return false
-  else
-    return true
-  end
+  return hash.count {|k,v| v.odd?} == 1
 end

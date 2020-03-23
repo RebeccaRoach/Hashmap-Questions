@@ -1,7 +1,6 @@
-# find elements that are common to both lists
-# concat list 2 onto list1 to make one large array
-# try to create keys out of every array element
-# if element is already there as a key, it overlaps --> push to result array
+# find elements that are common to both array lists
+
+# O(n) time and space complexities
 
 def intersection(list1, list2)
   
@@ -19,3 +18,11 @@ def intersection(list1, list2)
 
   return result
 end
+
+
+# Equivalently, could make a Ruby set:
+# def intersection(list1, list2)
+#   set = list1.to_set & list2
+#   result = set.to_a
+#   return result
+# end
